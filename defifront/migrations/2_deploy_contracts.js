@@ -9,4 +9,6 @@ module.exports = async function (deployer) {
     // Deploy EthSwap
     await deployer.deploy(Swap, token.address);
     const swap = await Swap.deployed()
+
+    await token.mint(swap.address, 1000);
 };
